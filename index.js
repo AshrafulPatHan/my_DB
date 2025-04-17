@@ -8,11 +8,21 @@ app.use(express.json());
 app.get('/', (req, res) => {
    res.send('Hello World!')
  })
- 
- app.listen(port, () => {
-   console.log(`Example app listening on port ${port}`)
- })
 
+app.get('/a', (req, res) => {
+   res.send("heeeeeeeeeeeeeeeeeeeee")
+ })
+ 
+
+
+//  send data
+ app.get('/name', (req, res) => {
+   res.send(
+      [
+         {"name":"ashraful"}
+      ]
+   )
+ })
 //  -------------
 // read JSON from data.json
 app.get('/data', (req, res) => {
@@ -51,3 +61,8 @@ app.post('/app', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
+
+
+app.listen(port, () => {
+   console.log(`Example app listening on port ${port}`)
+ })
